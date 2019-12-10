@@ -12,3 +12,6 @@ nnoremap <leader>rrr :RustRun<cr>i
 nnoremap <leader>ri :! cargo install
 nnoremap <leader>ru :! cargo uninstall
 
+let b:ale_linters = {'rust': ['rls','cargo','rustc']}
+let g:ale_fixers = {'rust': ['rustfmt']}
+let g:ale_completion_enabled = 1

@@ -25,6 +25,7 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'fatih/vim-go'
 Plugin 'jdsimcoe/panic.vim'
+Plugin 'elixir-editors/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,13 +48,14 @@ map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
 source ~/.vim/config/ale.vim
-source ~/.vim/config/coc.vim
+"source ~/.vim/config/coc.vim
 source ~/.vim/config/flutter.vim
 source ~/.vim/config/fzf.vim
 source ~/.vim/config/rust.vim
 "source ~/.vim/config/lsp.vim
 source ~/.vim/config/elm.vim
 source ~/.vim/config/go.vim
+source ~/.vim/config/elixir.vim
 
 """"" STANDARD VIMRC """""
 " Source a global configuration file if available
@@ -129,6 +131,10 @@ set splitright
 "set list
 "set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 "hi specialkey ctermfg=66 guifg=#222222
+
+"permanent undo
+set undodir=~/.vimdid
+set undofile
 
 "enable 256-color
 set t_Co=256
