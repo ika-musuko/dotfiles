@@ -26,6 +26,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'fatih/vim-go'
 Plugin 'jdsimcoe/panic.vim'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'thinca/vim-localrc'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,6 +111,7 @@ noremap <leader>s :Sex<CR>
 noremap! <leader>s :Sex<CR>
 noremap <leader><space> za
 nnoremap <leader>g :e <cfile><cr>
+nnoremap <leader>% :e %<cr>
 
 "easier split navigation
 nnoremap <C-J> <C-W><C-J>
