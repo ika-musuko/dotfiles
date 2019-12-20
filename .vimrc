@@ -5,6 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lilydjwg/fcitx.vim'
@@ -14,19 +15,26 @@ Plugin 'zah/nim.vim'
 Plugin 'jparise/vim-graphql'
 Plugin 'tpope/vim-surround'
 Plugin 'thosakwe/vim-flutter'
-Plugin 'neoclide/coc.nvim'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'ncm2/ncm2'
 Plugin 'ElmCast/elm-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'fatih/vim-go'
 Plugin 'jdsimcoe/panic.vim'
+Plugin 'sickill/vim-monokai'
+Plugin 'phanviet/vim-monokai-pro'
+Plugin 'sjl/badwolf'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'thinca/vim-localrc'
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'nbouscal/vim-stylish-haskell'
+Plugin 'racer-rust/vim-racer'
+Plugin 'dag/vim-fish'
+Plugin 'autozimu/LanguageClient-neovim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,14 +57,14 @@ map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
 source ~/.vim/config/ale.vim
-"source ~/.vim/config/coc.vim
-source ~/.vim/config/flutter.vim
 source ~/.vim/config/fzf.vim
-source ~/.vim/config/rust.vim
-"source ~/.vim/config/lsp.vim
-source ~/.vim/config/elm.vim
-source ~/.vim/config/go.vim
-source ~/.vim/config/elixir.vim
+source ~/.vim/config/lsp.vim
+au BufReadPost,BufNewFile *.dart source ~/.vim/config/flutter.vim
+au BufReadPost,BufNewFile *.rs source ~/.vim/config/rust.vim
+au BufReadPost,BufNewFile *.elm source ~/.vim/config/elm.vim
+au BufReadPost,BufNewFile *.go source ~/.vim/config/go.vim
+au BufReadPost,BufNewFile *.ex source ~/.vim/config/elixir.vim
+au BufReadPost,BufNewFile *.hs source ~/.vim/config/haskell.vim
 
 """"" STANDARD VIMRC """""
 " Source a global configuration file if available
@@ -157,6 +165,6 @@ autocmd Filetype dart setlocal ts=2 sw=2 expandtab
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 "colors
-colorscheme panic
+colorscheme monokai
 "let g:airline_theme='base16_isotope'
 let g:airline#extensions#tabline#enabled = 1
