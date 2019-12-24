@@ -23,7 +23,7 @@ color info               default   black
 color article            default   default
 
 # default apps
-browser "/usr/bin/chromium %u"
+browser "/usr/bin/chromium --new-window %u"
 
 # colors
 color background          white   default
