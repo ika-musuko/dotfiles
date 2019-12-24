@@ -1,0 +1,43 @@
+# general settings
+auto-reload yes
+
+# unbind keys
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+# solarized
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     cyan
+color listfocus_unread   black     cyan
+color info               default   black
+color article            default   default
+
+# default apps
+browser "/usr/bin/chromium %u"
+
+# colors
+color background          white   default
+color listnormal          white   default
+color listnormal_unread   magenta default bold
+color listfocus           color14 color208 bold
+color listfocus_unread    color14 color208 bold
+color info                green   color0
+color article             white   default
+
+# highlights
+highlight article "^(Feed|Link):.*$" color208 default bold
+highlight article "^(Title|Date|Author):.*$" red default bold
+highlight article "https?://[^ ]+" color208 default underline
+highlight article "\\[[0-9]+\\]" magenta default bold
+highlight article "\\[image\\ [0-9]+\\]" magenta default bold
+highlight feedlist "^─.*$" color61 color235 bold

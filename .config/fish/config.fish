@@ -6,4 +6,5 @@ end
 
 set -gx PATH /home/sherwyn/.local/bin $PATH
 set -gx PATH /home/sherwyn/.elixir-ls/release $PATH
+set -gx PATH /home/sherwyn/.extra $PATH
 

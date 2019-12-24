@@ -19,3 +19,4 @@ nnoremap <leader>ee :ElmErrorDetail<cr>
 nnoremap <leader>ed :ElmShowDocs<cr>
 nnoremap <leader>eb :ElmBrowseDocs<cr>
 nnoremap <leader>ef :ElmFormat<cr>
+nnoremap <leader>ex :r !hex2rgb 

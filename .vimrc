@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -28,13 +29,13 @@ Plugin 'sickill/vim-monokai'
 Plugin 'phanviet/vim-monokai-pro'
 Plugin 'sjl/badwolf'
 Plugin 'elixir-editors/vim-elixir'
-Plugin 'thinca/vim-localrc'
+Plugin 'embear/vim-localvimrc'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'nbouscal/vim-stylish-haskell'
 Plugin 'racer-rust/vim-racer'
 Plugin 'dag/vim-fish'
-Plugin 'autozimu/LanguageClient-neovim'
+Plugin 'mbbill/undotree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,6 +56,9 @@ filetype plugin indent on    " required
 " clever-f
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
+
+" undotree
+map <leader>u :UndotreeToggle<cr>
 
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
@@ -168,3 +172,6 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 colorscheme monokai
 "let g:airline_theme='base16_isotope'
 let g:airline#extensions#tabline#enabled = 1
+
+"c++
+let g:ale_cpp_gcc_options = "-std=c++17"
