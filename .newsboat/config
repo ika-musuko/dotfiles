@@ -1,5 +1,6 @@
 # general settings
 auto-reload yes
+datetime-format "%b %-d %H:%M"
 
 # unbind keys
 unbind-key j
@@ -23,7 +24,8 @@ color info               default   black
 color article            default   default
 
 # default apps
-browser "/usr/bin/chromium --new-window %u"
+#browser "/usr/bin/chromium --new-window %u"
+browser "/home/sherwyn/.extra/linkhandler %u"
 
 # colors
 color background          white   default

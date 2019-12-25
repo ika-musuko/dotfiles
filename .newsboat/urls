@@ -1,13 +1,21 @@
 # technology
-https://news.ycombinator.com/rss
+https://news.ycombinator.com/rss technology
+
+# news
+https://www.nhk.or.jp/rss/news/cat0.xml # nhkニュース
+https://www.nhk.or.jp/rss/news/cat1.xml # 社会
+https://www.nhk.or.jp/rss/news/cat3.xml # 科学・医療
+https://www.nhk.or.jp/rss/news/cat5.xml # 経済
+https://www.nhk.or.jp/rss/news/cat6.xml # 国際
+https://www.mercurynews.com/feed/
+http://rss.asahi.com/rss/asahi/newsheadlines.rdf
+https://www.excite.co.jp/news/rss/source/?source=Reuters
+
+# podcasts
+https://www.tfm.co.jp/podcasts/weeklyjapan/podcast.xml
 
 # politics
 https://queryfeed.net/tw?q=%40andrewyang
-https://queryfeed.net/tw?q=%40thehill
-
-# news
-http://www3.nhk.or.jp/rss/news/cat0.xml
-http://rss.asahi.com/rss/asahi/newsheadlines.rdf
 
 # youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA # luke smith
@@ -15,5 +23,5 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCqTVfT9JQqhA6_Hi_h_h97Q # j
 https://www.youtube.com/feeds/videos.xml?channel_id=UC_iD0xppBwwsrM9DegC5cQQ # jon gjengset
 https://www.youtube.com/feeds/videos.xml?channel_id=UC_gSotrFVZ_PiAxo3fTQVuQ # magnus midtbo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCPWXiRWZ29zrxPFIQT7eHSA # the hill
+https://www.youtube.com/feeds/videos.xml?channel_id=UCDhjThxt99rkGcjcEreyOQg # 李姉妹
 #https://www.youtube.com/feeds/videos.xml?channel_id=
-
