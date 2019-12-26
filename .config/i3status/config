@@ -15,7 +15,6 @@ general {
         markup = "pango"
 }
 
-order += "read_file uptime"
 order += "cpu_temperature 0"
 order += "load"
 order += "disk /"

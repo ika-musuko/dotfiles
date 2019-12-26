@@ -36,6 +36,7 @@ Plugin 'nbouscal/vim-stylish-haskell'
 Plugin 'racer-rust/vim-racer'
 Plugin 'dag/vim-fish'
 Plugin 'mbbill/undotree'
+Plugin 'ultrox/elm-ale-pretty'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
