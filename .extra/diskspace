@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+import shutil
+
+def gb(val):
+    return round(val*(2**-30), 1)
+
+total, used, free = shutil.disk_usage("/")
+print(f"{gb(used)}G / {gb(total)}G")

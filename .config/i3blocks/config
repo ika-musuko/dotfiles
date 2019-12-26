@@ -1,0 +1,36 @@
+[cmus]
+command=sleep .25; ~/.extra/cmus-info
+interval=repeat
+color=#DDAA00
+
+[volume-pulseaudio]
+command=~/.config/i3blocks/scripts/volume-pulseaudio
+interval=1
+signal=1
+
+[cpu-temp]
+command=echo 🌡 $(sensors | grep "Core 0" | awk '{ print $3 }')
+interval=1
+color=#FF4444
+
+[uptime]
+command=uptime -p
+interval=60
+color=#77AAFF
+
+[disk]
+command=echo 🖴 $(~/.extra/diskspace)
+interval=1
+color=#8888FF
+
+[weather]
+command=curl -Ss 'https://wttr.in/Hayward?m&format="%c+%t"'
+interval=3600
+color=#44FFFF
+
+[time]
+command=~/.config/i3blocks/scripts/time
+interval=1
+STRFTIME_FORMAT=%a %Y-%m-%d %T
+TZONES=$DEFAULT_TZ,Asia/Tokyo
+TZ_LABELS=加州,日本

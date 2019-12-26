@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# raw fields
+cmus_field() {
+    cmus-remote -Q | grep $1 | cut -d ' ' -f $2-
+}
+
+title=$(cmus_field title 3)
+artist=$(cmus_field "\<artist\>" 3)
+cont=$(cmus_field "continue" 3)
+position=$(cmus_field position 2)
+duration=$(cmus_field duration 2)
+play_status=$(cmus_field status 2)
+repeat_current=$(cmus_field repeat_current 3)
+
+# processed fields
+current_time=$(date -d@$position -u +%M:%S)
+total_time=$(date -d@$duration -u +%M:%S)
+
+# icon
+if [ "$play_status" == "playing" ]; then
+    icon=▶
+elif [ "$play_status" == "paused" ]; then
+    icon=⏸
+else
+    icon=◼
+fi
+
+# loop_icon
+if [ "$repeat_current" == "true" ]; then
+    loop_icon=⭮
+else
+    loop_icon=""
+fi
+
+# output
+echo $loop_icon $icon $artist - $title \($current_time / $total_time\) 

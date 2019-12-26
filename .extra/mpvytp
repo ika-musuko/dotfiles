@@ -1,0 +1,8 @@
+#!/bin/sh
+resource="$1"
+if [[ $resource != *"youtube"* ]]; then
+    resource="https://youtube.com/playlist?list=$resource"
+fi
+echo $resource
+echo "$1" | xclip -sel clip
+mpv --input-ipc-server=/tmp/mpvsoc$(date +%s) "$resource"
