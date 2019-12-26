@@ -33,5 +33,10 @@ else
     loop_icon=""
 fi
 
+# use filename if title is null
+if [ "$title" == "" ]; then
+    title=$(cmus_field file 2)
+fi
+
 # output
 echo $loop_icon $icon $artist - $title \($current_time / $total_time\) 

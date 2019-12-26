@@ -63,7 +63,7 @@ map <leader>u :UndotreeToggle<cr>
 
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
-source ~/.vim/config/lsp.vim
+"source ~/.vim/config/lsp.vim
 au BufReadPost,BufNewFile *.dart source ~/.vim/config/flutter.vim
 au BufReadPost,BufNewFile *.rs source ~/.vim/config/rust.vim
 au BufReadPost,BufNewFile *.elm source ~/.vim/config/elm.vim
