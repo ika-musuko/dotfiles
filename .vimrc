@@ -170,8 +170,10 @@ autocmd Filetype dart setlocal ts=2 sw=2 expandtab
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 "colors
-colorscheme monokai
-"let g:airline_theme='base16_isotope'
+colorscheme default
+hi Normal guibg=NONE ctermbg=NONE
+
+let g:airline_theme='base16_pop'
 let g:airline#extensions#tabline#enabled = 1
 
 "c++

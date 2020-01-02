@@ -109,7 +109,7 @@ font:
     #   - (Linux) monospace
     #   - (Windows) Consolas
     #/usr/share/fonts/nerd-fonts-complete/ttf/Bitstream Vera Sans Mono Nerd Font Complete.ttf
-    family: Liberation Mono
+    family: Noto Sans Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -171,34 +171,50 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors 
+# KDE Breeze (Ported from Konsole)
 colors:
   # Default colors
   primary:
-    background: '0x111111'
-    foreground: '0xf8f8f2'
+    background: '0x232627'
+    foreground: '0xfcfcfc'
+
+    dim_foreground: '0xeff0f1'
+    bright_foreground: '0xffffff'
+    dim_background: '0x31363b'
+    bright_background: '0x000000'
 
   # Normal colors
   normal:
-    black:   '0x111111'
-    red:     '0xff2c57'
-    green:   '0xa6e22e'
-    yellow:  '0xe6db44'
-    blue:    '0x57c7ff'
-    magenta: '0xf92672'
-    cyan:    '0x66d9ef'
-    white:   '0xf8f8f2'
+    black: '0x232627'
+    red: '0xed1515'
+    green: '0x11d116'
+    yellow: '0xf67400'
+    blue: '0x1d99f3'
+    magenta: '0x9b59b6'
+    cyan: '0x1abc9c'
+    white: '0xfcfcfc'
 
   # Bright colors
   bright:
-    black:   '0x686868'
-    red:     '0xff5c57'
-    green:   '0xa6e22e'
-    yellow:  '0xe6db44'
-    blue:    '0x57c7ff'
-    magenta: '0xf92672'
-    cyan:    '0x66d9ef'
-    white:   '0xf8f8f2'
+    black: '0x7f8c8d'
+    red: '0xc0392b'
+    green: '0x1cdc9a'
+    yellow: '0xfdbc4b'
+    blue: '0x3daee9'
+    magenta: '0x8e44df'
+    cyan: '0x16a085'
+    white: '0xffffff'
+
+  # Dim colors
+  dim:
+    black: '0x31363b'
+    red: '0x783228'
+    green: '0x17a262'
+    yellow: '0xb65619'
+    blue: '0x1b668f'
+    magenta: '0x614a73'
+    cyan: '0x186c60'
+    white: '0x63686d'
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
@@ -279,7 +295,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+background_opacity: 0.85
 
 # Mouse bindings
 #
