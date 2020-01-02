@@ -1,3 +1,3 @@
 function audiyo
-	cd ~/projects/audiyo/web/src
+	cd ~/projects/audiyo
 end
