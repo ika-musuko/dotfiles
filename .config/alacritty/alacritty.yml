@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 10
+    y: 10
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -137,7 +137,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 10.0
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -175,7 +175,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x232627'
+    background: '0x000000'
     foreground: '0xfcfcfc'
 
     dim_foreground: '0xeff0f1'
@@ -185,7 +185,7 @@ colors:
 
   # Normal colors
   normal:
-    black: '0x232627'
+    black: '0x000000'
     red: '0xed1515'
     green: '0x11d116'
     yellow: '0xf67400'
@@ -295,7 +295,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.85
+background_opacity: 0.7
 
 # Mouse bindings
 #
