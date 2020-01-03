@@ -21,7 +21,7 @@ color=#3DAEE9
 [disk]
 command=echo 🖴 $(~/.extra/diskspace)
 interval=1
-color=#8E44DF
+color=#C397D8
 
 [weather]
 command=curl -Ss 'https://wttr.in/Hayward?m&format="%c+%t"'
