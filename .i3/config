@@ -372,7 +372,7 @@ bindsym $mod+m move workspace to output left
   client.focused_inactive #2F3D44 #333333 #AAAAAA #454948
   client.unfocused        #2F3D44 #333333 #AAAAAA #454948
   client.urgent           #CB4B16 #FDF6E3 #AAAAAA #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.placeholder      #000000 #0c0c0c #FFFFFF #000000 
 
   client.background       #2B2C2B
 
@@ -395,5 +395,7 @@ floating_maximum_size 800 x 600
 # gui file manager lol
 bindsym $Mod+x exec "pcmanfm"
 
+# open browser
+bindsym $Mod+semicolon exec "qutebrowser"
 
 
