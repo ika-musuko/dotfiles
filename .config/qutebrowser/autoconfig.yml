@@ -6,8 +6,18 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        ',M': hint links spawn mpv {hint-url}
+        ',m': spawn mpv {url}
+        Y: hint links spawn mpv {hint-url}
   colors.completion.scrollbar.fg:
     global: gray
+  content.notifications:
+    https://jp.rbth.com: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   content.user_stylesheets:
     global: null
   input.insert_mode.leave_on_load:

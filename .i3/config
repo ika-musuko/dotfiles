@@ -8,14 +8,14 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 3
+default_border pixel 2
 default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
-bindsym $mod+y border pixel 3
+bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop 
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -58,11 +58,15 @@ bindsym Muhenkan exec --no-startup-id cmus-remote -C "toggle repeat_current" # t
 bindsym Shift+Henkan exec --no-startup-id cmus-remote -n # next song
 bindsym Shift+Muhenkan exec --no-startup-id cmus-remote -r # prev song / restart song
 
+# wallpaper
+#bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/wallpapers -b black
+bindsym $mod+Shift+w exec --no-startup-id /home/sherwyn/.extra/random_wallpaper
+
 ################################################################################################
 
 # Screen brightness controls
- bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
- bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -152,16 +156,16 @@ bindsym $mod+Shift+i move container to workspace next
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
+set $ws1 1:chat
 set $ws2 2
 set $ws3 3
 set $ws4 4
-set $ws5 5
+set $ws5 5:music
 set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws10 10
+set $ws10 10:10
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -248,38 +252,38 @@ bindsym $mod+shift+p mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+        bindsym s exec --no-startup-id i3exit suspend, mode "default"
+        bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+        bindsym e exec --no-startup-id i3exit logout, mode "default"
+        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+        bindsym r exec --no-startup-id i3exit reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
+# These bindings trigger as soon as you enter the resize mode
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+    bindsym h resize shrink width 5 px or 5 ppt
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
+# same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # exit resize mode: Enter or Escape
+# exit resize mode: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -336,37 +340,58 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar -t
-	status_command i3blocks
-	position bottom
+    i3bar_command i3bar -t
+        status_command i3blocks
+        position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
+        tray_output primary
 #   tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
+        bindsym button4 nop
+        bindsym button5 nop
 #   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+        strip_workspace_numbers yes
 
-    colors {
-        background #000000AA
-        statusline #F9FAF9
-        separator  #454947
+        colors {
+            background #000000CC
+                statusline #F9FAF9
+                separator  #454947
 
 #                          border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
+                focused_workspace  #F9FAF9 #16a085 #292F34
+                active_workspace   #595B5B #353836 #FDF6E3
+                inactive_workspace #595B5B #222D31 #EEE8D5
+                binding_mode       #16a085 #2C2C2C #F9FAF9
+                urgent_workspace   #16a085 #FDF6E3 #E5201D
+        }
 }
 
 # swap current workspace monitor
 bindsym $mod+m move workspace to output left
 
 # Theme colors
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+#set_from_resource $fg i3wm.color7 #f0f0f0
+#set_from_resource $bg i3wm.color2 #f0f0f0
+#
+## class                 border  backgr. text    indicator   child_border
+#client.focused          #4c7899 #285577 #ffffff #aaaaaa     #999999
+#client.focused_inactive #333333 #5f676a #ffffff #484e50     #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e     #222222
+#client.urgent           #2f343a #900000 #ffffff #900000     #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000     #0c0c0c
+#
+#client.background       #ffffff
+##
+## PROTIP: You can also dynamically set dmenu's colors this way:
+#bindsym $mod+d exec dmenu_recency -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
+#bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
+
 # class                   border  backgr. text    indic.   child_border
   client.focused          #556064 #556064 #80FF80 #8E44DF  #1ABC9C
   client.focused_inactive #2F3D44 #333333 #AAAAAA #454948
@@ -394,6 +419,9 @@ floating_maximum_size 800 x 600
 
 # gui file manager lol
 bindsym $Mod+x exec "pcmanfm"
+
+# tui file manager
+bindsym $Mod+Shift+x exec "alacritty -e 'vifm'"
 
 # open browser
 bindsym $Mod+semicolon exec "qutebrowser"

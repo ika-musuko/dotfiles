@@ -37,6 +37,8 @@ Plugin 'racer-rust/vim-racer'
 Plugin 'dag/vim-fish'
 Plugin 'mbbill/undotree'
 Plugin 'ultrox/elm-ale-pretty'
+Plugin 'python-mode/python-mode'
+Plugin 'fneu/breezy'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,6 +72,7 @@ au BufReadPost,BufNewFile *.elm source ~/.vim/config/elm.vim
 au BufReadPost,BufNewFile *.go source ~/.vim/config/go.vim
 au BufReadPost,BufNewFile *.ex source ~/.vim/config/elixir.vim
 au BufReadPost,BufNewFile *.hs source ~/.vim/config/haskell.vim
+au BufReadPost,BufNewFile *.py source ~/.vim/config/python.vim
 
 """"" STANDARD VIMRC """""
 " Source a global configuration file if available
@@ -173,7 +176,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 colorscheme default
 hi Normal guibg=NONE ctermbg=NONE
 
-let g:airline_theme='base16_pop'
+let g:airline_theme='base16_harmonic16'
 let g:airline#extensions#tabline#enabled = 1
 
 "c++
