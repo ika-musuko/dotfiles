@@ -1,7 +1,7 @@
 [cmus]
 command=sleep .25; ~/.extra/cmus-info
 interval=repeat
-color=#F6A400
+color=#1ABC9C
 
 [volume-pulseaudio]
 command=~/.config/i3blocks/scripts/volume-pulseaudio
@@ -11,7 +11,7 @@ signal=1
 [cpu-temp]
 command=echo 🌡 $(sensors | grep "Core 0" | awk '{ print $3 }')
 interval=1
-color=#ED1515
+color=#C0392B
 
 [uptime]
 command=uptime -p
@@ -21,7 +21,12 @@ color=#3DAEE9
 [disk]
 command=echo 🖴 $(~/.extra/diskspace)
 interval=1
-color=#C397D8
+color=#9B59B6
+
+[kernel]
+command=echo 🐧 $(uname -r)
+interval=once
+color=#FDBC4B
 
 [weather]
 command=curl -Ss 'https://wttr.in/Hayward?m&format="%c+%t"'
