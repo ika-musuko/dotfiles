@@ -483,25 +483,27 @@ noremap <leader><space> za
 nnoremap <leader>g :e <cfile><cr>
 nnoremap <leader>% :e %<cr>
 
-"" Clean search (highlight)
+" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 
-"" Switching windows
+" Switching windows
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
-"" Vmap for maintaining Visual Mode after shifting > and <
+" Vmap for maintaining Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
 
-"" Move visual block
+" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"" Open current line on GitHub
+" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+" easy resizing
 nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
@@ -509,7 +511,7 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 "autocmd BufWinLeave *.* mkview
 "autocmd BufWinEnter *.* silent! loadview 
 
-"normal split creation
+" normal split creation
 set splitbelow
 set splitright
 
@@ -521,7 +523,7 @@ let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
-"permanent undo
+" permanent undo
 set undodir=~/.vimdid
 set undofile
 
@@ -531,7 +533,7 @@ set undofile
 colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
 
-"enable 256-color
+" enable 256-color
 set t_Co=256
 
 " spellcheck color
