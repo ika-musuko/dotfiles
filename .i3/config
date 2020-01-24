@@ -358,12 +358,12 @@ bar {
                 statusline #F9FAF9
                 separator  #454947
 
-        #                          border  backgr. text
-                focused_workspace  #555555 #000000aa #11D116
-                active_workspace   #595B5B #000000aa #FDF6E3
-                inactive_workspace #595B5B #000000aa #EEE8D5
-                binding_mode       #16a085 #000000aa #F9FAF9
-                urgent_workspace   #16a085 #000000aa #E5201D
+        #                          border  backgr.   text
+                focused_workspace  #555555 #000000aa #3DAEE9
+                active_workspace   #595B5B #000000aa #595B5B
+                inactive_workspace #595B5B #000000aa #595B5B
+                binding_mode       #16A085 #000000aa #F9FAF9
+                urgent_workspace   #16A085 #000000aa #E5201D
         }
 }
 
