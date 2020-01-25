@@ -46,6 +46,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
+Plug 'rhysd/clever-f.vim'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -209,23 +210,23 @@ augroup END
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>pg"
+let g:jedi#goto_definitions_command = "<leader>pd"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
+let g:jedi#usages_command = "<leader>pu"
+let g:jedi#rename_command = "<leader>pr"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
 " flutter
 augroup dart
-    nnoremap <leader>fa :FlutterRun<cr>
-    nnoremap <leader>fq :FlutterQuit<cr>
-    nnoremap <leader>fr :FlutterHotReload<cr>
-    nnoremap <leader>fR :FlutterHotRestart<cr>
-    nnoremap <leader>fD :FlutterVisualDebug<cr>
-    nnoremap <leader>fe :FlutterEmulatorsLaunch Pixel<cr>
+    au FileType dart nnoremap <leader>fa :FlutterRun<cr>
+    au FileType dart nnoremap <leader>fq :FlutterQuit<cr>
+    au FileType dart nnoremap <leader>fr :FlutterHotReload<cr>
+    au FileType dart nnoremap <leader>fR :FlutterHotRestart<cr>
+    au FileType dart nnoremap <leader>fD :FlutterVisualDebug<cr>
+    au FileType dart nnoremap <leader>fe :FlutterEmulatorsLaunch Pixel<cr>
 augroup END
 
 " rust
@@ -342,11 +343,11 @@ augroup go
   au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
   au FileType go nmap <Leader>db <Plug>(go-doc-browser)
 
-  au FileType go nmap <leader>r  <Plug>(go-run-split)
+  au FileType go nmap <leader>gr <Plug>(go-run-split)
   au FileType go nmap <leader>rq <C-w><C-w>ZZ
-  au FileType go nmap <leader>t  <Plug>(go-test)
+  au FileType go nmap <leader>gt  <Plug>(go-test)
   "au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
-  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType go nmap <Leader>gi <Plug>(go-info)
   au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
   au FileType go nmap <C-g> :GoDecls<cr>
   au FileType go nmap <leader>dr :GoDeclsDir<cr>
@@ -506,6 +507,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " easy resizing
 nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" remember last position in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
 "load/save splits on startup/exit
 "autocmd BufWinLeave *.* mkview
