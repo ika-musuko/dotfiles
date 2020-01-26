@@ -407,7 +407,6 @@ bindsym $mod+m move workspace to output left
 exec "source ~/.xprofile"
 exec "fcitx-autostart"
 exec_always "picom --fade-delta=0 --no-fading-openclose"
-exec_always "cmst --minimized"
 
 # focus follows mouse
 focus_follows_mouse no
