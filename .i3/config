@@ -360,8 +360,8 @@ bar {
 
         #                          border  backgr.   text
                 focused_workspace  #555555 #000000aa #3DAEE9
-                active_workspace   #595B5B #000000aa #595B5B
-                inactive_workspace #595B5B #000000aa #595B5B
+                active_workspace   #595B5B #000000aa #aaaaaa
+                inactive_workspace #595B5B #000000aa #aaaaaa
                 binding_mode       #16A085 #000000aa #F9FAF9
                 urgent_workspace   #16A085 #000000aa #E5201D
         }
