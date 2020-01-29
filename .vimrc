@@ -203,7 +203,6 @@ augroup END
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ highlight ColorColumn ctermbg=darkgrey ctermbg=darkgrey
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -353,7 +352,7 @@ augroup go
   au FileType go nmap <leader>gdr :GoDeclsDir<cr>
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go imap <leader>gdr <esc>:<C-u>GoDeclsDir<cr>
-  au FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
+  au FileType go nmap <leader>gb :!go build<cr>
 augroup END
 
 au BufReadPost,BufNewFile *.ex source ~/.vim/config/elixir.vim
