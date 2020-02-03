@@ -1,7 +1,7 @@
-[volume-pulseaudio]
-command=~/.config/i3blocks/scripts/volume-pulseaudio
+[volume]
+command=echo 🔈 $(~/.config/i3blocks/scripts/volume)
 interval=1
-signal=1
+color=#00A3F9
 
 [uptime]
 command=uptime -p
@@ -23,10 +23,15 @@ command=echo 🌡 $(sensors | grep "Core 0" | awk '{ print $3 }')
 interval=1
 color=#E5201D
 
+[battery]
+command=~/.config/i3blocks/scripts/battery
+interval=10
+color=#FF33AA
+
 [weather]
 command=curl -Ss 'https://wttr.in/Hayward?m&format="%c+%t"'
 interval=3600
-color=#8844FF
+color=#AA66FF
 
 [time]
 command=~/.config/i3blocks/scripts/time

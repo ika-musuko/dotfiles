@@ -202,7 +202,7 @@ augroup END
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -382,7 +382,7 @@ if !exists('g:airline_symbols')
 endif
 
 " vim-airline
-let g:airline_theme='onedark'
+let g:airline_theme='behelit'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -534,7 +534,7 @@ set undofile
 "*****************************************************************************
 " visuals
 "*****************************************************************************
-colorscheme onedark
+colorscheme ron
 hi Normal guibg=NONE ctermbg=NONE
 
 " enable 256-color

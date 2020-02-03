@@ -48,9 +48,12 @@ bindsym $mod+z exec --no-startup-id morc_menu
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+period exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym $mod+comma exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym $mod+slash exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym $mod+period          exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym $mod+comma           exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym $mod+slash           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # cmus
 bindsym Henkan exec --no-startup-id cmus-remote -u # play/pause
@@ -60,7 +63,7 @@ bindsym Shift+Muhenkan exec --no-startup-id cmus-remote -r # prev song / restart
 
 # wallpaper
 #bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/wallpapers -b black
-bindsym $mod+Shift+w exec --no-startup-id /home/sherwyn/.extra/random_wallpaper
+bindsym $mod+Shift+w exec --no-startup-id random_wallpaper
 
 ################################################################################################
 
@@ -176,8 +179,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-workspace $ws1 output DP-1
-workspace $ws5 output HDMI-1
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -362,7 +363,7 @@ bar {
                 separator  #454947
 
         #                          border  backgr.   text
-                focused_workspace  #555555 #000000aa #00a9f3
+                focused_workspace  #555555 #000000aa #1cdc9a
                 active_workspace   #595B5B #000000aa #cccccc
                 inactive_workspace #595B5B #000000aa #cccccc
                 binding_mode       #16A085 #000000aa #F9FAF9 
@@ -383,7 +384,7 @@ bindsym $mod+m move workspace to output left
 #set_from_resource $bg i3wm.color2 #f0f0f0
 #
 ## class                 border  backgr. text    indicator   child_border
-client.focused           #4c7899 #285577 #ffffff #229922     #00a9f3
+client.focused           #4c7899 #285577 #ffffff #229922     #1cdc9a
 client.focused_inactive  #333333 #5f676a #ffffff #484e50     #5f676a
 client.unfocused         #333333 #222222 #888888 #292d2e     #222222
 client.urgent            #2f343a #900000 #ffffff #900000     #900000
@@ -395,22 +396,12 @@ client.background        #ffffff
 #bindsym $mod+d exec dmenu_recency -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
 #bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
 
-# class                   border  backgr. text    indic.   child_border
-#  client.focused          #556064 #556064 #80FF80 #8E44DF  #1ABC9C 
-#  client.focused_inactive #2F3D44 #333333 #AAAAAA #454948
-#  client.unfocused        #2F3D44 #333333 #AAAAAA #454948
-#  client.urgent           #CB4B16 #FDF6E3 #AAAAAA #268BD2
-#  client.placeholder      #000000 #0c0c0c #FFFFFF #000000 
-#
-#  client.background       #2B2C2B
-
 # sherwyn's commands
 # load profile just in case
 #exec "source ~/.profile"
 exec "source ~/.xprofile"
 exec "fcitx-autostart"
 exec_always "picom --fade-delta=0 --no-fading-openclose"
-exec_always "! ps -A | grep connman-gtk && connman-gtk &"
 
 # focus follows mouse
 focus_follows_mouse no
