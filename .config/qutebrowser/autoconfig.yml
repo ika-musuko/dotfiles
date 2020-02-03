@@ -25,4 +25,4 @@ settings:
   tabs.show:
     global: never
   tabs.tabs_are_windows:
-    global: false
+    global: true
