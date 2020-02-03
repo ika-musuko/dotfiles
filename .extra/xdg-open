@@ -1,0 +1,17 @@
+#!/bin/sh
+## xdg-open -- opens shit
+
+URI="$*"
+
+# yank the URI first
+printf '%s' "$URI" | xsel -i
+
+case $URI in
+    *.jp*g) curl -s "$URI" -o /tmp/img.jpg; feh /tmp/img.jpg ;;
+    *.png) curl -s "$URI" -o /tmp/img.png; feh /tmp/img.png ;;
+    *.gif) mpv "$URI" ;;
+    *.txt) alacritty -e sh -c "curl -s '$URI' | less" ;;
+    magnet:*) alacritty -e "qbittorrent "$URI"" ;;
+    *.pdf) curl -s "$URI" -o /tmp/doc.pdf; zathura /tmp/doc.pdf ;;
+    *) qutebrowser "$URI" ;;
+esac

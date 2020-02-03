@@ -110,7 +110,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 #bindsym $mod+b workspace back_and_forth
 #bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -156,11 +156,11 @@ bindsym $mod+Shift+i move container to workspace next
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:chat
+set $ws1 1
 set $ws2 2
 set $ws3 3
 set $ws4 4
-set $ws5 5:music
+set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -176,6 +176,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+workspace $ws1 output DP-1
+workspace $ws5 output HDMI-1
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -207,6 +209,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10;
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
+for_window [title="connman-gtk"] floating enable border pixel 1
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -359,10 +362,10 @@ bar {
                 separator  #454947
 
         #                          border  backgr.   text
-                focused_workspace  #555555 #000000aa #3DAEE9
-                active_workspace   #595B5B #000000aa #595B5B
-                inactive_workspace #595B5B #000000aa #595B5B
-                binding_mode       #16A085 #000000aa #F9FAF9
+                focused_workspace  #555555 #000000aa #00a9f3
+                active_workspace   #595B5B #000000aa #cccccc
+                inactive_workspace #595B5B #000000aa #cccccc
+                binding_mode       #16A085 #000000aa #F9FAF9 
                 urgent_workspace   #16A085 #000000aa #E5201D
         }
 }
@@ -380,26 +383,26 @@ bindsym $mod+m move workspace to output left
 #set_from_resource $bg i3wm.color2 #f0f0f0
 #
 ## class                 border  backgr. text    indicator   child_border
-#client.focused          #4c7899 #285577 #ffffff #aaaaaa     #999999
-#client.focused_inactive #333333 #5f676a #ffffff #484e50     #5f676a
-#client.unfocused        #333333 #222222 #888888 #292d2e     #222222
-#client.urgent           #2f343a #900000 #ffffff #900000     #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000     #0c0c0c
-#
-#client.background       #ffffff
+client.focused           #4c7899 #285577 #ffffff #229922     #00a9f3
+client.focused_inactive  #333333 #5f676a #ffffff #484e50     #5f676a
+client.unfocused         #333333 #222222 #888888 #292d2e     #222222
+client.urgent            #2f343a #900000 #ffffff #900000     #900000
+client.placeholder       #000000 #0c0c0c #ffffff #000000     #0c0c0c
+                         
+client.background        #ffffff
 ##
 ## PROTIP: You can also dynamically set dmenu's colors this way:
 #bindsym $mod+d exec dmenu_recency -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
 #bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop -nb "$bg" -nf "$fg" -sb "$bg" -sf "$fg"
 
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FF80 #8E44DF  #1ABC9C
-  client.focused_inactive #2F3D44 #333333 #AAAAAA #454948
-  client.unfocused        #2F3D44 #333333 #AAAAAA #454948
-  client.urgent           #CB4B16 #FDF6E3 #AAAAAA #268BD2
-  client.placeholder      #000000 #0c0c0c #FFFFFF #000000 
-
-  client.background       #2B2C2B
+#  client.focused          #556064 #556064 #80FF80 #8E44DF  #1ABC9C 
+#  client.focused_inactive #2F3D44 #333333 #AAAAAA #454948
+#  client.unfocused        #2F3D44 #333333 #AAAAAA #454948
+#  client.urgent           #CB4B16 #FDF6E3 #AAAAAA #268BD2
+#  client.placeholder      #000000 #0c0c0c #FFFFFF #000000 
+#
+#  client.background       #2B2C2B
 
 # sherwyn's commands
 # load profile just in case
@@ -407,7 +410,7 @@ bindsym $mod+m move workspace to output left
 exec "source ~/.xprofile"
 exec "fcitx-autostart"
 exec_always "picom --fade-delta=0 --no-fading-openclose"
-exec_always "cmst --minimized"
+exec_always "! ps -A | grep connman-gtk && connman-gtk &"
 
 # focus follows mouse
 focus_follows_mouse no
