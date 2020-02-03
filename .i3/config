@@ -48,12 +48,12 @@ bindsym $mod+z exec --no-startup-id morc_menu
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym $mod+period          exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym $mod+comma           exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-bindsym $mod+slash           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
+bindsym $mod+period          exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute #decrease sound volume
+bindsym $mod+comma           exec --no-startup-id amixer set Master 5%- unmute #decrease sound volume
+bindsym XF86AudioMute        exec --no-startup-id amixer set Master toggle # mute sound
+bindsym $mod+slash           exec --no-startup-id amixer set Master toggle # mute sound
 
 # cmus
 bindsym Henkan exec --no-startup-id cmus-remote -u # play/pause
@@ -421,4 +421,6 @@ bindsym $Mod+Shift+x exec "alacritty -e 'vifm'"
 # open browser
 bindsym $Mod+semicolon exec "qutebrowser"
 
+# dmenu-emoji
+bindsym $Mod+Shift+m exec "dmenu-emoji"
 

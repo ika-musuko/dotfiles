@@ -1,5 +1,5 @@
 [volume]
-command=echo 🔈 $(~/.config/i3blocks/scripts/volume)
+command=~/.config/i3blocks/scripts/volume
 interval=1
 color=#00A3F9
 
