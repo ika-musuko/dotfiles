@@ -47,6 +47,7 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'rhysd/clever-f.vim'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -342,9 +343,11 @@ augroup go
   au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
   au FileType go nmap <Leader>db <Plug>(go-doc-browser)
 
-  au FileType go nmap <leader>gr <Plug>(go-run-split)
+  au FileType go nmap <F6> <Plug>(go-rename)
+
+  au FileType go nmap <F5> <Plug>(go-run-split)
   au FileType go nmap <leader>rq <C-w><C-w>ZZ
-  au FileType go nmap <leader>gt  <Plug>(go-test)
+  au FileType go nmap <F4>  <Plug>(go-test)
   "au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
   au FileType go nmap <Leader>gi <Plug>(go-info)
   au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
@@ -534,7 +537,7 @@ set undofile
 "*****************************************************************************
 " visuals
 "*****************************************************************************
-colorscheme ron
+colorscheme purify
 hi Normal guibg=NONE ctermbg=NONE
 
 " enable 256-color

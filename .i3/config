@@ -63,7 +63,7 @@ bindsym Shift+Muhenkan exec --no-startup-id cmus-remote -r # prev song / restart
 
 # wallpaper
 #bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/wallpapers -b black
-bindsym $mod+Shift+w exec --no-startup-id random_wallpaper
+bindsym $mod+Shift+w exec --no-startup-id /home/sherwyn/.extra/random_wallpaper
 
 ################################################################################################
 
@@ -358,16 +358,16 @@ bar {
         strip_workspace_numbers yes
 
         colors {
-            background #00000033
+            background #000000aa
                 statusline #F9FAF9
                 separator  #454947
 
         #                          border  backgr.   text
-                focused_workspace  #555555 #000000aa #1cdc9a
-                active_workspace   #595B5B #000000aa #cccccc
-                inactive_workspace #595B5B #000000aa #cccccc
-                binding_mode       #16A085 #000000aa #F9FAF9 
-                urgent_workspace   #16A085 #000000aa #E5201D
+                focused_workspace  #555555 #00000088 #1cdc9a
+                active_workspace   #595B5B #00000088 #cccccc
+                inactive_workspace #595B5B #00000088 #cccccc
+                binding_mode       #16A085 #00000088 #F9FAF9 
+                urgent_workspace   #16A085 #00000088 #E5201D
         }
 }
 
