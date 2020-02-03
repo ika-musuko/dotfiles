@@ -12,5 +12,7 @@ settings:
     global: Cica
   fonts.default_size:
     global: 10pt
+  tabs.show:
+    global: never
   tabs.tabs_are_windows:
     global: true
