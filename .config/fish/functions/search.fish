@@ -1,3 +1,3 @@
 function search
-	.extra/search
+	~/.extra/search
 end
