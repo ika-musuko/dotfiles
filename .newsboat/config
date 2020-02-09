@@ -25,7 +25,7 @@ color article            default   default
 
 # default apps
 #browser "/usr/bin/chromium --new-window %u"
-browser "/home/sherwyn/.extra/linkhandler %u"
+browser "/home/sherwyn/.extra/xdg-open %u"
 
 # colors
 color background          white   default

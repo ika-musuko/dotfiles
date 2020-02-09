@@ -7,11 +7,28 @@ URI="$*"
 printf '%s' "$URI" | xsel -i
 
 case $URI in
-    *.jp*g) curl -s "$URI" -o /tmp/img.jpg; feh /tmp/img.jpg ;;
-    *.png) curl -s "$URI" -o /tmp/img.png; feh /tmp/img.png ;;
+    # images
+	*png|*jpg|*jpe|*jpeg|*gif)
+		feh "$1" >/dev/null 2>&1 & ;;
     *.gif) mpv "$URI" ;;
-    *.txt) alacritty -e sh -c "curl -s '$URI' | less" ;;
-    magnet:*) alacritty -e "qbittorrent "$URI"" ;;
-    *.pdf) curl -s "$URI" -o /tmp/doc.pdf; zathura /tmp/doc.pdf ;;
-    *) qutebrowser "$URI" ;;
+    
+    # video
+	*mkv|*webm|*mp4|*youtube.com*|*youtu.be*|*hooktube.com*|*bitchute.com*)
+		mpv --input-ipc-server=/tmp/mpvsoc$(date +%s) -quiet "$1" >/dev/null 2>&1 & ;;
+
+    # audio
+	*mp3|*flac|*opus|*mp3?source*)
+		mpv --input-ipc-server=/tmp/mpvsoc$(date +%s) --quiet "$1" >/dev/null 2>&1 & ;;
+
+    # documents
+    *.txt) 
+        alacritty -e sh -c "curl -s '$URI' | less" >/dev/null 2>&1 & ;;
+    magnet:*) 
+        alacritty -e "qbittorrent "$URI"" >/dev/null 2>&1 & ;;
+    *.pdf) 
+        curl -s "$URI" -o /tmp/doc.pdf; zathura /tmp/doc.pdf 2>&1 & ;;
+
+    # other
+    *) qutebrowser "$URI" 2>&1 & ;;
 esac
+
