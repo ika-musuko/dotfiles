@@ -27,6 +27,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec xcwd | xargs alacritty --working-directory
 
 # kill focused window
 bindsym $mod+q kill
@@ -54,9 +55,13 @@ bindsym $mod+slash exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggl
 
 # cmus
 bindsym Henkan exec --no-startup-id cmus-remote -u # play/pause
+bindsym KP_Enter exec --no-startup-id cmus-remote -u # play/pause
 bindsym Muhenkan exec --no-startup-id cmus-remote -C "toggle repeat_current" # toggle song loop
-bindsym Shift+Henkan exec --no-startup-id cmus-remote -n # next song
+bindsym KP_Begin exec --no-startup-id cmus-remote -C "toggle repeat_current" # toggle song loop
 bindsym Shift+Muhenkan exec --no-startup-id cmus-remote -r # prev song / restart song
+bindsym KP_Left exec --no-startup-id cmus-remote -r # prev song / restart song
+bindsym Shift+Henkan exec --no-startup-id cmus-remote -n # next song
+bindsym KP_Right exec --no-startup-id cmus-remote -n # next song
 
 # wallpaper
 #bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/wallpapers -b black
@@ -68,7 +73,7 @@ bindsym $mod+Shift+w exec --no-startup-id /home/sherwyn/.extra/random_wallpaper
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-# Start Applications
+# Start Applications 
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm

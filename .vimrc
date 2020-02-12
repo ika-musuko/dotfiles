@@ -47,7 +47,11 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'rhysd/clever-f.vim'
+
+" colors
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'tomasiser/vim-code-dark'
+Plug 'ErichDonGubler/vim-sublime-monokai'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -104,7 +108,8 @@ Plug 'ultrox/elm-ale-pretty'
 
 "flutter
 Plug 'thosakwe/vim-flutter'
-
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 
 " html
 Plug 'hail2u/vim-css3-syntax'
@@ -220,6 +225,7 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
 " flutter
+let g:lsc_auto_map = v:true
 augroup dart
     au FileType dart nnoremap <leader>fa :FlutterRun<cr>
     au FileType dart nnoremap <leader>fq :FlutterQuit<cr>
@@ -317,10 +323,17 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_generate_tags = 1
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_extra_types = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+
+" ctags
+let s:tlist_def_go_settings = 'go;g:enum;s:struct;u:union;t:type;' .
+                           \ 'v:variable;f:function'
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -345,9 +358,11 @@ augroup go
 
   au FileType go nmap <F6> <Plug>(go-rename)
 
-  au FileType go nmap <F5> <Plug>(go-run-split)
+
+  "au FileType go nmap <F5> <Plug>(go-run-split)
+  au FileType go nmap <F5> :!go build<cr>
   au FileType go nmap <leader>rq <C-w><C-w>ZZ
-  au FileType go nmap <F4>  <Plug>(go-test)
+  au FileType go nmap <F4>  <Plug>(go-build)
   "au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
   au FileType go nmap <Leader>gi <Plug>(go-info)
   au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
@@ -385,7 +400,7 @@ if !exists('g:airline_symbols')
 endif
 
 " vim-airline
-let g:airline_theme='behelit'
+let g:airline_theme='codedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -537,11 +552,13 @@ set undofile
 "*****************************************************************************
 " visuals
 "*****************************************************************************
-colorscheme purify
-hi Normal guibg=NONE ctermbg=NONE
-
 " enable 256-color
 set t_Co=256
+set t_ut=
+colorscheme sublimemonokai
+set termguicolors
+hi Normal guibg=NONE ctermbg=NONE
+
 
 " spellcheck color
 hi SpellBad ctermfg=015 ctermbg=001 cterm=none guifg=#FFFFFF guibg=#FF0000 gui=none
