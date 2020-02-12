@@ -28,18 +28,18 @@ color article            default   default
 browser "/home/sherwyn/.extra/xdg-open %u"
 
 # colors
-color background          white   default
-color listnormal          white   default
-color listnormal_unread   magenta default bold
-color listfocus           color14 color208 bold
-color listfocus_unread    color14 color208 bold
-color info                green   color0
-color article             white   default
+#color background          white   default
+#color listnormal          white   default
+color listnormal_unread   color14 default bold
+color listfocus           white   color14 bold
+color listfocus_unread    color0   color14 bold
+#color info                green   color0
+#color article             white   default
 
 # highlights
-highlight article "^(Feed|Link):.*$" color208 default bold
+highlight article "^(Feed|Link):.*$" color14 default bold
 highlight article "^(Title|Date|Author):.*$" red default bold
-highlight article "https?://[^ ]+" color208 default underline
-highlight article "\\[[0-9]+\\]" magenta default bold
-highlight article "\\[image\\ [0-9]+\\]" magenta default bold
+highlight article "https?://[^ ]+" color14 default underline
+highlight article "\\[[0-9]+\\]" green default bold
+highlight article "\\[image\\ [0-9]+\\]" green default bold
 highlight feedlist "^─.*$" color61 color235 bold
