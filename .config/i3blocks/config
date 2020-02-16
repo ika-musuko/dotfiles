@@ -4,7 +4,7 @@ interval=1
 color=#00A3F9
 
 [uptime]
-command=uptime -p
+command=echo ⏲ $(uptime -p)
 interval=60
 color=#44FF33
 

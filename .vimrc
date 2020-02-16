@@ -47,7 +47,9 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'rhysd/clever-f.vim'
+Plug 'cseelus/vim-colors-lucid'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'chriskempson/base16-vim'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -537,7 +539,8 @@ set undofile
 "*****************************************************************************
 " visuals
 "*****************************************************************************
-colorscheme purify
+set termguicolors
+colorscheme lucid
 hi Normal guibg=NONE ctermbg=NONE
 
 " enable 256-color

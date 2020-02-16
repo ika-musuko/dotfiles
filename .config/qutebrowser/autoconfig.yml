@@ -9,9 +9,9 @@ settings:
   content.notifications:
     https://app.slack.com: true
   fonts.default_family:
-    global: Cica
+    global: monospace
   fonts.default_size:
-    global: 10pt
+    global: 8pt
   tabs.show:
     global: never
   tabs.tabs_are_windows:
