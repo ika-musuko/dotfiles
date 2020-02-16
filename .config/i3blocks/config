@@ -9,7 +9,7 @@ interval=1
 signal=1
 
 [uptime]
-command=uptime -p
+command=echo ⏲ $(uptime -p)
 interval=60
 color=#44FF33
 
