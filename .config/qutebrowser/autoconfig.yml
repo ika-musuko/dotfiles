@@ -8,10 +8,14 @@ config_version: 2
 settings:
   content.notifications:
     https://app.slack.com: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   fonts.default_family:
     global: monospace
   fonts.default_size:
     global: 8pt
+  tabs.min_width:
+    global: -1
   tabs.show:
     global: never
   tabs.tabs_are_windows:
